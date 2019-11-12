@@ -12,11 +12,11 @@ describe('Controls component', () => {
       <Controls locked={false} closed={false} toggleClosed={mock} />,
     );
 
-    const lockButton = getByText(/^Lock Gate$/i);
+    const lockButton = getByText(/^lock gate$/i);
     expect(lockButton).toHaveAttribute('disabled');
     expect(lockButton.disabled).toBe(true);
 
-    const closeButton = getByText(/^Close Gate$/i);
+    const closeButton = getByText(/^close gate$/i);
     expect(closeButton.disabled).toBe(false);
     fireEvent.click(closeButton);
   });
@@ -26,10 +26,10 @@ describe('Controls component', () => {
       <Controls locked={false} closed={true} toggleClosed={mock} />,
     );
 
-    const lockButton = getByText(/^Lock Gate$/i);
+    const lockButton = getByText(/^lock gate$/i);
     expect(lockButton.disabled).toBe(false);
 
-    const openButton = getByText(/^Open Gate$/i);
+    const openButton = getByText(/^open gate$/i);
     expect(openButton.disabled).toBe(false);
     fireEvent.click(openButton);
   });
@@ -39,10 +39,10 @@ describe('Controls component', () => {
       <Controls locked={true} closed={true} toggleLocked={mock} />,
     );
 
-    const unlockButton = getByText(/^Unlock Gate$/i);
+    const unlockButton = getByText(/^unlock gate$/i);
     expect(unlockButton.disabled).toBe(false);
 
-    const openButton = getByText(/^Open Gate$/i);
+    const openButton = getByText(/^open gate$/i);
     expect(openButton.disabled).toBe(true);
     fireEvent.click(unlockButton);
   });
